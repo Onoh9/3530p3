@@ -5,21 +5,52 @@
 using namespace std;
 
 struct item{
-    pair<string,string> startEndDate;
+    string endDate;
     double wattage;
     item* next;
 
-    item(): startEndDate("",""), wattage(0), next(nullptr){};
-    item(pair<string,string> StartEndDate, double Wattage);
-    //item(pair<string,string> StartEndDate, int Wattage) : startEndDate(StartEndDate), wattage(Wattage), next(nullptr){};
-    item(item const &data) : startEndDate(data.startEndDate), wattage(data.wattage), next(data.next){};
+    string year;
+    string month;
+    string day;
+
+    item(): endDate("",""), wattage(0), next(nullptr){};
+    item(string EndDate, double Wattage);
+    //item(pair<string,string> EndDate, int Wattage) : endDate(EndDate), wattage(Wattage), next(nullptr){};
+    item(item const &data);
 };
 
-item::item(pair<string, string> StartEndDate, double Wattage) {
-    startEndDate = StartEndDate;
+item::item(string EndDate, double Wattage) {
+    endDate = EndDate;
     wattage = Wattage;
     next = nullptr;
+    if(endDate != ""){
+        year = EndDate.substr(0,4);
+        month = EndDate.substr(5, 2);
+        day = EndDate.substr(8, 2);
+    }
+    else{
+        year = "";
+        month = "";
+        day = "";
+    }
 
+}
+
+item::item(const item &data) {
+    endDate = data.endDate;
+    wattage = data.wattage;
+    next = data.next;
+
+    if(data.endDate != ""){
+        year = data.endDate.substr(0,4);
+        month = data.endDate.substr(5, 2);
+        day = data.endDate.substr(8, 2);
+    }
+    else{
+        year = "";
+        month = "";
+        day = "";
+    }
 }
 
 class HashTable{
@@ -28,7 +59,7 @@ private:
     int count;
     item** hashtable;
 
-    int hash(pair<string,string> startEndDate);
+    int hash(string endDate);
     void tableDoubling();
     void rehash(int tableSize);
 
@@ -43,9 +74,12 @@ public:
     ~HashTable();
 
     void add(item data);
-    void remove(pair<string,string> startEndDate);
-    int search(pair<string,string> startEndDate);
+    void remove(string endDate);
+    //double search(string endDate);
     void display(string filename);
+    vector<item*> searchYear(string year);
+    vector<item*> searchMonth(string month);
+    vector<item*> searchDay(string day);
 };
 
 void HashTable::add(item data){
@@ -53,7 +87,7 @@ void HashTable::add(item data){
     if(count > tableSize){
         tableDoubling();
     }
-    int index = hash(data.startEndDate);
+    int index = hash(data.endDate);
     item* newItem = new item(data);
     if(hashtable[index] == nullptr){
         hashtable[index] = newItem;
@@ -64,11 +98,11 @@ void HashTable::add(item data){
         newItem->next = next;
     }
 }
-void HashTable::remove(pair<string,string> startEndDate){
-    int index = hash(startEndDate);
+void HashTable::remove(string endDate){
+    int index = hash(endDate);
     item* Ptr1 = hashtable[index];
     item* Ptr2 = nullptr;
-    while(Ptr1 != nullptr && Ptr1->startEndDate != startEndDate){
+    while(Ptr1 != nullptr && Ptr1->endDate != endDate){
         Ptr2 = Ptr1;
         Ptr1 = Ptr1->next;
     }
@@ -87,20 +121,21 @@ void HashTable::remove(pair<string,string> startEndDate){
         Ptr1 = nullptr;
     }
 }
-
-int HashTable::search(pair<string, string> startEndDate) {
-    int index = hash(startEndDate);
+/*
+double HashTable::search(string endDate) {
+    int index = hash(endDate);
     item* Ptr = hashtable[index];
     while(Ptr != nullptr){
-        if(Ptr->startEndDate == startEndDate){
+        if(Ptr->endDate == endDate){
             return Ptr->wattage;
         }
         Ptr = Ptr->next;
     }
     return -1;
 }
-int HashTable::hash(pair<string, string> startEndDate){
-    string temp = startEndDate.first + startEndDate.second;
+*/
+int HashTable::hash(string endDate){
+    string temp = endDate;
     int hash = 0;
     int index;
     for(char i : temp){
@@ -124,7 +159,7 @@ void HashTable::rehash(int tableSize) {
         item* Ptr2 = hashtable[i];
         while(Ptr1 != nullptr){
             Ptr2 = Ptr1->next;
-            int index = hash(Ptr1->startEndDate);
+            int index = hash(Ptr1->endDate);
             if(newTable[index] == nullptr){
                 newTable[index] = Ptr1;
                 newTable[index]->next = nullptr;
@@ -158,7 +193,7 @@ void HashTable::display(string filename) {
         out << "Bucket "<< i << ": ";
         item* Ptr1 = hashtable[i];
         while(Ptr1 != nullptr){
-            out << "(" << Ptr1->startEndDate.first << " - " << Ptr1->startEndDate.second << ", " <<  Ptr1->wattage << "mW) ";
+            out << "(" << Ptr1->endDate << ", " <<  Ptr1->wattage << "mW) ";
             Ptr1 = Ptr1->next;
         }
         out << endl;
@@ -166,6 +201,51 @@ void HashTable::display(string filename) {
     out << endl;
     out.close();
 
+}
+
+vector<item*> HashTable::searchYear(string year) {
+    vector<item*> itemVector;
+    itemVector.clear();
+    int index = 0;
+    /* when searching for a full tuple, we use the end date. the tuples are hashed by full date and time.
+     * searching for a year only means we only want one part of the hash input. theyre sorted by full date
+     * and time so the hash function will not put us back in the exact same spot as the tuple landed. this means
+     * we have to start searching from the beginning instead of closer to where the tuple is guaranteed to be.
+     */
+    item* Ptr = hashtable[index];
+    while(Ptr != nullptr){
+        if(Ptr->year == year){
+            itemVector.push_back(Ptr);
+        }
+        Ptr = Ptr->next;
+    }
+    return itemVector;
+}
+vector<item*> HashTable::searchMonth(string month) {
+    vector<item*> itemVector;
+    itemVector.clear();
+    int index = 0;
+    item* Ptr = hashtable[index];
+    while(Ptr != nullptr){
+        if(Ptr->month == month){
+            itemVector.push_back(Ptr);
+        }
+        Ptr = Ptr->next;
+    }
+    return itemVector;
+}
+vector<item*> HashTable::searchDay(string day) {
+    vector<item*> itemVector;
+    itemVector.clear();
+    int index = 0;
+    item* Ptr = hashtable[index];
+    while(Ptr != nullptr){
+        if(Ptr->day == day){
+            itemVector.push_back(Ptr);
+        }
+        Ptr = Ptr->next;
+    }
+    return itemVector;
 }
 
 vector<item> runfile(string path){
@@ -199,13 +279,34 @@ vector<item> runfile(string path){
         if(wattageSTR != ""){
             wattage = stod(wattageSTR);
         }
-        pair<string,string> temp(start,end);
+        string temp = end;
         item Item(temp,wattage);
         itemVector.push_back(Item);
     }
     return itemVector;
 }
 int main(){
+
+    //testing how to delimit end date into year month and date
+    //string temp = "2020-01-04 00:00:00+00:00";
+    //string year = temp.substr(0,temp.find('-'));
+    //cout << year; good
+    //string month = temp.substr(temp.find('-')+1, temp.find('-')-2);
+    //cout << month << "\n"; good
+    //string day = temp.substr(temp.find_last_of('-')+1);
+    //string year = temp.substr(0,4);
+    //cout << year << endl;
+    //string month = temp.substr(5,2);
+    //cout << month << endl;
+    //string day = temp.substr(8,2);
+    //cout << day << endl;
+
+    //day = temp.substr(0,1);//temp.substr(temp.find('-')+4, temp.find_last_of('-'));
+    //cout << day << "\n";
+
+
+
+
     HashTable Switzerland(9);
     vector<item> itemVector = runfile("../ch.csv");
     int y = 0;
@@ -270,6 +371,7 @@ int main(){
         Sweden.add(i);
     }
     Sweden.display("Sweden");
+
 
     return 0;
 }
