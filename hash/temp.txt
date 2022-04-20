@@ -1,0 +1,561 @@
+/*
+    vector<item> belgiumVector;
+    ifstream belgiumCSV;
+    belgiumCSV.open("../be.csv");
+    if(!belgiumCSV.is_open()){
+        cout << "Could not open file belgium.csv" << endl;
+        return 1;
+    }
+    getline(belgiumCSV, testline);
+    getline(belgiumCSV,dataline);
+
+    start = dataline.substr(0, dataline.find(','));
+    dataline = dataline.erase(0, dataline.find(',') +1);
+    end = dataline.substr(0, dataline.find(','));
+    dataline = dataline.erase(0, dataline.find(',') +1);
+    wattageSTR = dataline;
+    wattage = stod(wattageSTR);
+    while(!belgiumCSV.eof()){
+        getline(belgiumCSV,dataline);
+        dataline.substr(0, dataline.find(','));
+        start = dataline.substr(0, dataline.find(','));
+        dataline = dataline.erase(0, dataline.find(',') +1);
+        end = dataline.substr(0, dataline.find(','));
+        dataline = dataline.erase(0, dataline.find(',') +1);
+        wattageSTR = dataline;
+        if(wattageSTR != ""){
+            wattage = stod(wattageSTR);
+        }
+        pair<string,string> temp(start,end);
+        item Item(temp,wattage);
+        belgiumVector.push_back(Item);
+    }
+    //now each tuple in belgiumCSV is an item. input all items in the belgiumVector to the hashmap
+    HashTable Belgium(9);
+    y = 0;
+    for(auto i : belgiumVector){
+        y++;
+        Belgium.add(i);
+    }
+    Belgium.display("Belgium");
+
+    vector<item> switzerlandVector;
+    ifstream switzerlandCSV;
+    switzerlandCSV.open("../ch.csv");
+    if(!switzerlandCSV.is_open()){
+        cout << "Could not open file switzerland.csv" << endl;
+        return 1;
+    }
+    getline(switzerlandCSV, testline);
+    getline(switzerlandCSV,dataline);
+
+    start = dataline.substr(0, dataline.find(','));
+    dataline = dataline.erase(0, dataline.find(',') +1);
+    end = dataline.substr(0, dataline.find(','));
+    dataline = dataline.erase(0, dataline.find(',') +1);
+    wattageSTR = dataline;
+    wattage = stod(wattageSTR);
+    while(!switzerlandCSV.eof()){
+        getline(switzerlandCSV,dataline);
+        dataline.substr(0, dataline.find(','));
+        start = dataline.substr(0, dataline.find(','));
+        dataline = dataline.erase(0, dataline.find(',') +1);
+        end = dataline.substr(0, dataline.find(','));
+        dataline = dataline.erase(0, dataline.find(',') +1);
+        wattageSTR = dataline;
+        if(wattageSTR != ""){
+            wattage = stod(wattageSTR);
+        }
+        pair<string,string> temp(start,end);
+        item Item(temp,wattage);
+        switzerlandVector.push_back(Item);
+    }
+    //now each tuple in switzerlandCSV is an item. input all items in the switzerlandVector to the hashmap
+    HashTable Switzerland(9);
+    y = 0;
+    for(auto i : switzerlandVector){
+        y++;
+        Switzerland.add(i);
+    }
+    Switzerland.display("Switzerland");
+
+    vector<item> germanyVector;
+    ifstream germanyCSV;
+    germanyCSV.open("../de.csv");
+    if(!germanyCSV.is_open()){
+        cout << "Could not open file germany.csv" << endl;
+        return 1;
+    }
+    getline(germanyCSV, testline);
+    getline(germanyCSV,dataline);
+
+    start = dataline.substr(0, dataline.find(','));
+    dataline = dataline.erase(0, dataline.find(',') +1);
+    end = dataline.substr(0, dataline.find(','));
+    dataline = dataline.erase(0, dataline.find(',') +1);
+    wattageSTR = dataline;
+    wattage = stod(wattageSTR);
+    while(!germanyCSV.eof()){
+        getline(germanyCSV,dataline);
+        dataline.substr(0, dataline.find(','));
+        start = dataline.substr(0, dataline.find(','));
+        dataline = dataline.erase(0, dataline.find(',') +1);
+        end = dataline.substr(0, dataline.find(','));
+        dataline = dataline.erase(0, dataline.find(',') +1);
+        wattageSTR = dataline;
+        if(wattageSTR != ""){
+            wattage = stod(wattageSTR);
+        }
+        pair<string,string> temp(start,end);
+        item Item(temp,wattage);
+        germanyVector.push_back(Item);
+    }
+    //now each tuple in germanyCSV is an item. input all items in the germanyVector to the hashmap
+    HashTable Germany(9);
+    y = 0;
+    for(auto i : germanyVector){
+        y++;
+        Germany.add(i);
+    }
+    Germany.display("Germany");
+
+    vector<item> denmarkVector;
+    ifstream denmarkCSV;
+    denmarkCSV.open("../dk.csv");
+    if(!denmarkCSV.is_open()){
+        cout << "Could not open file denmark.csv" << endl;
+        return 1;
+    }
+    getline(denmarkCSV, testline);
+    getline(denmarkCSV,dataline);
+
+    start = dataline.substr(0, dataline.find(','));
+    dataline = dataline.erase(0, dataline.find(',') +1);
+    end = dataline.substr(0, dataline.find(','));
+    dataline = dataline.erase(0, dataline.find(',') +1);
+    wattageSTR = dataline;
+    wattage = stod(wattageSTR);
+    while(!denmarkCSV.eof()){
+        getline(denmarkCSV,dataline);
+        dataline.substr(0, dataline.find(','));
+        start = dataline.substr(0, dataline.find(','));
+        dataline = dataline.erase(0, dataline.find(',') +1);
+        end = dataline.substr(0, dataline.find(','));
+        dataline = dataline.erase(0, dataline.find(',') +1);
+        wattageSTR = dataline;
+        if(wattageSTR != ""){
+            wattage = stod(wattageSTR);
+        }
+        pair<string,string> temp(start,end);
+        item Item(temp,wattage);
+        denmarkVector.push_back(Item);
+    }
+    //now each tuple in denmarkCSV is an item. input all items in the denmarkVector to the hashmap
+    HashTable Denmark(9);
+    y = 0;
+    for(auto i : denmarkVector){
+        y++;
+        Denmark.add(i);
+    }
+    Denmark.display("Denmark");
+
+    vector<item> spainVector;
+    ifstream spainCSV;
+    spainCSV.open("../es.csv");
+    if(!spainCSV.is_open()){
+        cout << "Could not open file spain.csv" << endl;
+        return 1;
+    }
+    getline(spainCSV, testline);
+    getline(spainCSV,dataline);
+
+    start = dataline.substr(0, dataline.find(','));
+    dataline = dataline.erase(0, dataline.find(',') +1);
+    end = dataline.substr(0, dataline.find(','));
+    dataline = dataline.erase(0, dataline.find(',') +1);
+    wattageSTR = dataline;
+    wattage = stod(wattageSTR);
+    while(!spainCSV.eof()){
+        getline(spainCSV,dataline);
+        dataline.substr(0, dataline.find(','));
+        start = dataline.substr(0, dataline.find(','));
+        dataline = dataline.erase(0, dataline.find(',') +1);
+        end = dataline.substr(0, dataline.find(','));
+        dataline = dataline.erase(0, dataline.find(',') +1);
+        wattageSTR = dataline;
+        if(wattageSTR != ""){
+            wattage = stod(wattageSTR);
+        }
+        pair<string,string> temp(start,end);
+        item Item(temp,wattage);
+        spainVector.push_back(Item);
+    }
+    //now each tuple in spainCSV is an item. input all items in the spainVector to the hashmap
+    HashTable Spain(9);
+    y = 0;
+    for(auto i : spainVector){
+        y++;
+        Spain.add(i);
+    }
+    Spain.display("Spain");
+
+    vector<item> franceVector;
+    ifstream franceCSV;
+    franceCSV.open("../fr.csv");
+    if(!franceCSV.is_open()){
+        cout << "Could not open file france.csv" << endl;
+        return 1;
+    }
+    getline(franceCSV, testline);
+    getline(franceCSV,dataline);
+
+    start = dataline.substr(0, dataline.find(','));
+    dataline = dataline.erase(0, dataline.find(',') +1);
+    end = dataline.substr(0, dataline.find(','));
+    dataline = dataline.erase(0, dataline.find(',') +1);
+    wattageSTR = dataline;
+    wattage = stod(wattageSTR);
+    while(!franceCSV.eof()){
+        getline(franceCSV,dataline);
+        dataline.substr(0, dataline.find(','));
+        start = dataline.substr(0, dataline.find(','));
+        dataline = dataline.erase(0, dataline.find(',') +1);
+        end = dataline.substr(0, dataline.find(','));
+        dataline = dataline.erase(0, dataline.find(',') +1);
+        wattageSTR = dataline;
+        if(wattageSTR != ""){
+            wattage = stod(wattageSTR);
+        }
+        pair<string,string> temp(start,end);
+        item Item(temp,wattage);
+        franceVector.push_back(Item);
+    }
+    //now each tuple in franceCSV is an item. input all items in the franceVector to the hashmap
+    HashTable France(9);
+    y = 0;
+    for(auto i : franceVector){
+        y++;
+        France.add(i);
+    }
+    France.display("France");
+
+    vector<item> ukVector;
+    ifstream ukCSV;
+    ukCSV.open("../gb.csv");
+    if(!ukCSV.is_open()){
+        cout << "Could not open file uk.csv" << endl;
+        return 1;
+    }
+    getline(ukCSV, testline);
+    getline(ukCSV,dataline);
+
+    start = dataline.substr(0, dataline.find(','));
+    dataline = dataline.erase(0, dataline.find(',') +1);
+    end = dataline.substr(0, dataline.find(','));
+    dataline = dataline.erase(0, dataline.find(',') +1);
+    wattageSTR = dataline;
+    wattage = stod(wattageSTR);
+    while(!ukCSV.eof()){
+        getline(ukCSV,dataline);
+        dataline.substr(0, dataline.find(','));
+        start = dataline.substr(0, dataline.find(','));
+        dataline = dataline.erase(0, dataline.find(',') +1);
+        end = dataline.substr(0, dataline.find(','));
+        dataline = dataline.erase(0, dataline.find(',') +1);
+        wattageSTR = dataline;
+        if(wattageSTR != ""){
+            wattage = stod(wattageSTR);
+        }
+        pair<string,string> temp(start,end);
+        item Item(temp,wattage);
+        ukVector.push_back(Item);
+    }
+    //now each tuple in ukCSV is an item. input all items in the ukVector to the hashmap
+    HashTable UK(9);
+    y = 0;
+    for(auto i : ukVector){
+        y++;
+        UK.add(i);
+    }
+    UK.display("UK");
+
+    vector<item> irelandVector;
+    ifstream irelandCSV;
+    irelandCSV.open("../ie.csv");
+    if(!irelandCSV.is_open()){
+        cout << "Could not open file ireland.csv" << endl;
+        return 1;
+    }
+    getline(irelandCSV, testline);
+    getline(irelandCSV,dataline);
+
+    start = dataline.substr(0, dataline.find(','));
+    dataline = dataline.erase(0, dataline.find(',') +1);
+    end = dataline.substr(0, dataline.find(','));
+    dataline = dataline.erase(0, dataline.find(',') +1);
+    wattageSTR = dataline;
+    wattage = stod(wattageSTR);
+    while(!irelandCSV.eof()){
+        getline(irelandCSV,dataline);
+        dataline.substr(0, dataline.find(','));
+        start = dataline.substr(0, dataline.find(','));
+        dataline = dataline.erase(0, dataline.find(',') +1);
+        end = dataline.substr(0, dataline.find(','));
+        dataline = dataline.erase(0, dataline.find(',') +1);
+        wattageSTR = dataline;
+        if(wattageSTR != ""){
+            wattage = stod(wattageSTR);
+        }
+        pair<string,string> temp(start,end);
+        item Item(temp,wattage);
+        irelandVector.push_back(Item);
+    }
+    //now each tuple in irelandCSV is an item. input all items in the irelandVector to the hashmap
+    HashTable Ireland(9);
+    y = 0;
+    for(auto i : irelandVector){
+        y++;
+        Ireland.add(i);
+    }
+    Ireland.display("Ireland");
+
+    vector<item> italyVector;
+    ifstream italyCSV;
+    italyCSV.open("../it.csv");
+    if(!italyCSV.is_open()){
+        cout << "Could not open file italy.csv" << endl;
+        return 1;
+    }
+    getline(italyCSV, testline);
+    getline(italyCSV,dataline);
+
+    start = dataline.substr(0, dataline.find(','));
+    dataline = dataline.erase(0, dataline.find(',') +1);
+    end = dataline.substr(0, dataline.find(','));
+    dataline = dataline.erase(0, dataline.find(',') +1);
+    wattageSTR = dataline;
+    wattage = stod(wattageSTR);
+    while(!italyCSV.eof()){
+        getline(italyCSV,dataline);
+        dataline.substr(0, dataline.find(','));
+        start = dataline.substr(0, dataline.find(','));
+        dataline = dataline.erase(0, dataline.find(',') +1);
+        end = dataline.substr(0, dataline.find(','));
+        dataline = dataline.erase(0, dataline.find(',') +1);
+        wattageSTR = dataline;
+        if(wattageSTR != ""){
+            wattage = stod(wattageSTR);
+        }
+        pair<string,string> temp(start,end);
+        item Item(temp,wattage);
+        italyVector.push_back(Item);
+    }
+    //now each tuple in italyCSV is an item. input all items in the italyVector to the hashmap
+    HashTable Italy(9);
+    y = 0;
+    for(auto i : italyVector){
+        y++;
+        Italy.add(i);
+    }
+    Italy.display("Italy");
+
+    vector<item> luxembourgVector;
+    ifstream luxembourgCSV;
+    luxembourgCSV.open("../lu.csv");
+    if(!luxembourgCSV.is_open()){
+        cout << "Could not open file luxembourg.csv" << endl;
+        return 1;
+    }
+    getline(luxembourgCSV, testline);
+    getline(luxembourgCSV,dataline);
+
+    start = dataline.substr(0, dataline.find(','));
+    dataline = dataline.erase(0, dataline.find(',') +1);
+    end = dataline.substr(0, dataline.find(','));
+    dataline = dataline.erase(0, dataline.find(',') +1);
+    wattageSTR = dataline;
+    wattage = stod(wattageSTR);
+    while(!luxembourgCSV.eof()){
+        getline(luxembourgCSV,dataline);
+        dataline.substr(0, dataline.find(','));
+        start = dataline.substr(0, dataline.find(','));
+        dataline = dataline.erase(0, dataline.find(',') +1);
+        end = dataline.substr(0, dataline.find(','));
+        dataline = dataline.erase(0, dataline.find(',') +1);
+        wattageSTR = dataline;
+        if(wattageSTR != ""){
+            wattage = stod(wattageSTR);
+        }
+        pair<string,string> temp(start,end);
+        item Item(temp,wattage);
+        luxembourgVector.push_back(Item);
+    }
+    //now each tuple in luxembourgCSV is an item. input all items in the luxembourgVector to the hashmap
+    HashTable Luxembourg(9);
+    y = 0;
+    for(auto i : luxembourgVector){
+        y++;
+        Luxembourg.add(i);
+    }
+    Luxembourg.display("Luxembourg");
+
+    vector<item> netherlandsVector;
+    ifstream netherlandsCSV;
+    netherlandsCSV.open("../nl.csv");
+    if(!netherlandsCSV.is_open()){
+        cout << "Could not open file netherlands.csv" << endl;
+        return 1;
+    }
+    getline(netherlandsCSV, testline);
+    getline(netherlandsCSV,dataline);
+
+    start = dataline.substr(0, dataline.find(','));
+    dataline = dataline.erase(0, dataline.find(',') +1);
+    end = dataline.substr(0, dataline.find(','));
+    dataline = dataline.erase(0, dataline.find(',') +1);
+    wattageSTR = dataline;
+    wattage = stod(wattageSTR);
+    while(!netherlandsCSV.eof()){
+        getline(netherlandsCSV,dataline);
+        dataline.substr(0, dataline.find(','));
+        start = dataline.substr(0, dataline.find(','));
+        dataline = dataline.erase(0, dataline.find(',') +1);
+        end = dataline.substr(0, dataline.find(','));
+        dataline = dataline.erase(0, dataline.find(',') +1);
+        wattageSTR = dataline;
+        if(wattageSTR != ""){
+            wattage = stod(wattageSTR);
+        }
+        pair<string,string> temp(start,end);
+        item Item(temp,wattage);
+        netherlandsVector.push_back(Item);
+    }
+    //now each tuple in netherlandsCSV is an item. input all items in the netherlandsVector to the hashmap
+    HashTable Netherlands(9);
+    y = 0;
+    for(auto i : netherlandsVector){
+        y++;
+        Netherlands.add(i);
+    }
+    Netherlands.display("Netherlands");
+
+    vector<item> norwayVector;
+    ifstream norwayCSV;
+    norwayCSV.open("../no.csv");
+    if(!norwayCSV.is_open()){
+        cout << "Could not open file norway.csv" << endl;
+        return 1;
+    }
+    getline(norwayCSV, testline);
+    getline(norwayCSV,dataline);
+
+    start = dataline.substr(0, dataline.find(','));
+    dataline = dataline.erase(0, dataline.find(',') +1);
+    end = dataline.substr(0, dataline.find(','));
+    dataline = dataline.erase(0, dataline.find(',') +1);
+    wattageSTR = dataline;
+    wattage = stod(wattageSTR);
+    while(!norwayCSV.eof()){
+        getline(norwayCSV,dataline);
+        dataline.substr(0, dataline.find(','));
+        start = dataline.substr(0, dataline.find(','));
+        dataline = dataline.erase(0, dataline.find(',') +1);
+        end = dataline.substr(0, dataline.find(','));
+        dataline = dataline.erase(0, dataline.find(',') +1);
+        wattageSTR = dataline;
+        if(wattageSTR != ""){
+            wattage = stod(wattageSTR);
+        }
+        pair<string,string> temp(start,end);
+        item Item(temp,wattage);
+        norwayVector.push_back(Item);
+    }
+    //now each tuple in norwayCSV is an item. input all items in the norwayVector to the hashmap
+    HashTable Norway(9);
+    y = 0;
+    for(auto i : norwayVector){
+        y++;
+        Norway.add(i);
+    }
+    Norway.display("Norway");
+
+    vector<item> portugalVector;
+    ifstream portugalCSV;
+    portugalCSV.open("../pt.csv");
+    if(!portugalCSV.is_open()){
+        cout << "Could not open file portugal.csv" << endl;
+        return 1;
+    }
+    getline(portugalCSV, testline);
+    getline(portugalCSV,dataline);
+
+    start = dataline.substr(0, dataline.find(','));
+    dataline = dataline.erase(0, dataline.find(',') +1);
+    end = dataline.substr(0, dataline.find(','));
+    dataline = dataline.erase(0, dataline.find(',') +1);
+    wattageSTR = dataline;
+    wattage = stod(wattageSTR);
+    while(!portugalCSV.eof()){
+        getline(portugalCSV,dataline);
+        dataline.substr(0, dataline.find(','));
+        start = dataline.substr(0, dataline.find(','));
+        dataline = dataline.erase(0, dataline.find(',') +1);
+        end = dataline.substr(0, dataline.find(','));
+        dataline = dataline.erase(0, dataline.find(',') +1);
+        wattageSTR = dataline;
+        if(wattageSTR != ""){
+            wattage = stod(wattageSTR);
+        }
+        pair<string,string> temp(start,end);
+        item Item(temp,wattage);
+        portugalVector.push_back(Item);
+    }
+    //now each tuple in portugalCSV is an item. input all items in the portugalVector to the hashmap
+    HashTable Portugal(9);
+    y = 0;
+    for(auto i : portugalVector){
+        y++;
+        Portugal.add(i);
+    }
+    Portugal.display("Portugal");
+
+    vector<item> swedenVector;
+    ifstream swedenCSV;
+    swedenCSV.open("../se.csv");
+    if(!swedenCSV.is_open()){
+        cout << "Could not open file sweden.csv" << endl;
+        return 1;
+    }
+    getline(swedenCSV, testline);
+    getline(swedenCSV,dataline);
+
+    start = dataline.substr(0, dataline.find(','));
+    dataline = dataline.erase(0, dataline.find(',') +1);
+    end = dataline.substr(0, dataline.find(','));
+    dataline = dataline.erase(0, dataline.find(',') +1);
+    wattageSTR = dataline;
+    wattage = stod(wattageSTR);
+    while(!swedenCSV.eof()){
+        getline(swedenCSV,dataline);
+        dataline.substr(0, dataline.find(','));
+        start = dataline.substr(0, dataline.find(','));
+        dataline = dataline.erase(0, dataline.find(',') +1);
+        end = dataline.substr(0, dataline.find(','));
+        dataline = dataline.erase(0, dataline.find(',') +1);
+        wattageSTR = dataline;
+        if(wattageSTR != ""){
+            wattage = stod(wattageSTR);
+        }
+        pair<string,string> temp(start,end);
+        item Item(temp,wattage);
+        swedenVector.push_back(Item);
+    }
+    //now each tuple in swedenCSV is an item. input all items in the swedenVector to the hashmap
+    HashTable Sweden(9);
+    y = 0;
+    for(auto i : swedenVector){
+        y++;
+        Sweden.add(i);
+    }
+    Sweden.display("Sweden");
+*/
