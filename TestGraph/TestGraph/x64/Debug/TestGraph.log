@@ -1,0 +1,177 @@
+﻿  TestGraph.cpp
+  The contents of <string_view> are available only with C++17 or later.
+C:\vcpkg\installed\x64-windows\include\matplot\util\common.h(21,23): error C2039: 'string_view': is not a member of 'std'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\numeric(23): message : see declaration of 'std'
+C:\vcpkg\installed\x64-windows\include\matplot\util\common.h(21,35): error C2065: 'string_view': undeclared identifier
+C:\vcpkg\installed\x64-windows\include\matplot\util\common.h(21,35): error C2146: syntax error: missing ')' before identifier 'str1'
+C:\vcpkg\installed\x64-windows\include\matplot\util\common.h(21,46): error C2039: 'string_view': is not a member of 'std'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\numeric(23): message : see declaration of 'std'
+C:\vcpkg\installed\x64-windows\include\matplot\util\common.h(22,23): error C2039: 'string_view': is not a member of 'std'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\numeric(23): message : see declaration of 'std'
+C:\vcpkg\installed\x64-windows\include\matplot\util\common.h(22,35): error C2065: 'string_view': undeclared identifier
+C:\vcpkg\installed\x64-windows\include\matplot\util\common.h(22,35): error C2146: syntax error: missing ')' before identifier 'str'
+C:\vcpkg\installed\x64-windows\include\matplot\util\common.h(23,24): error C2039: 'string_view': is not a member of 'std'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\numeric(23): message : see declaration of 'std'
+C:\vcpkg\installed\x64-windows\include\matplot\util\common.h(23,36): error C2065: 'string_view': undeclared identifier
+C:\vcpkg\installed\x64-windows\include\matplot\util\common.h(23,36): error C2146: syntax error: missing ')' before identifier 'str'
+C:\vcpkg\installed\x64-windows\include\matplot\util\common.h(25,29): error C2039: 'string_view': is not a member of 'std'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\numeric(23): message : see declaration of 'std'
+C:\vcpkg\installed\x64-windows\include\matplot\util\common.h(25,41): error C2065: 'string_view': undeclared identifier
+C:\vcpkg\installed\x64-windows\include\matplot\util\common.h(25,41): error C2146: syntax error: missing ')' before identifier 'label'
+C:\vcpkg\installed\x64-windows\include\matplot\util\common.h(65,48): error C2039: 'string_view': is not a member of 'std'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\numeric(23): message : see declaration of 'std'
+C:\vcpkg\installed\x64-windows\include\matplot\util\common.h(65,33): error C2065: 'string_view': undeclared identifier
+C:\vcpkg\installed\x64-windows\include\matplot\util\common.h(65,60): error C2146: syntax error: missing ')' before identifier 'text'
+C:\vcpkg\installed\x64-windows\include\matplot\util\common.h(65,33): error C2143: syntax error: missing ';' before '{'
+C:\vcpkg\installed\x64-windows\include\matplot\util\common.h(65,33): error C2447: '{': missing function header (old-style formal list?)
+C:\vcpkg\installed\x64-windows\include\matplot\util\common.h(176,9): warning C4984: 'if constexpr' is a C++17 language extension
+C:\vcpkg\installed\x64-windows\include\matplot\util\common.h(179,13): error C2429: language feature 'pack expansions in using-declarations' requires compiler flag '/std:c++17'
+C:\vcpkg\installed\x64-windows\include\matplot\util\common.h(190,9): warning C4984: 'if constexpr' is a C++17 language extension
+C:\vcpkg\installed\x64-windows\include\matplot\util\common.h(193,13): error C2429: language feature 'pack expansions in using-declarations' requires compiler flag '/std:c++17'
+C:\vcpkg\installed\x64-windows\include\matplot\util\common.h(205,9): warning C4984: 'if constexpr' is a C++17 language extension
+C:\vcpkg\installed\x64-windows\include\matplot\util\common.h(208,13): error C2429: language feature 'pack expansions in using-declarations' requires compiler flag '/std:c++17'
+C:\vcpkg\installed\x64-windows\include\matplot\util\common.h(429,19): error C2039: 'string_view': is not a member of 'std'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\numeric(23): message : see declaration of 'std'
+C:\vcpkg\installed\x64-windows\include\matplot\util\common.h(429,31): error C2065: 'string_view': undeclared identifier
+C:\vcpkg\installed\x64-windows\include\matplot\util\common.h(429,31): error C2146: syntax error: missing ')' before identifier 'text'
+C:\vcpkg\installed\x64-windows\include\matplot\util\common.h(429,42): error C2039: 'string_view': is not a member of 'std'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\numeric(23): message : see declaration of 'std'
+C:\vcpkg\installed\x64-windows\include\matplot\util\common.h(437,20): error C2039: 'string_view': is not a member of 'std'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\numeric(23): message : see declaration of 'std'
+C:\vcpkg\installed\x64-windows\include\matplot\util\common.h(437,5): error C2365: 'matplot::wordcount': redefinition; previous definition was 'function'
+C:\vcpkg\installed\x64-windows\include\matplot\util\common.h(432): message : see declaration of 'matplot::wordcount'
+C:\vcpkg\installed\x64-windows\include\matplot\util\common.h(437,32): error C2065: 'string_view': undeclared identifier
+C:\vcpkg\installed\x64-windows\include\matplot\util\common.h(437,32): error C2146: syntax error: missing ')' before identifier 'text'
+C:\vcpkg\installed\x64-windows\include\matplot\util\common.h(439,20): error C2039: 'string_view': is not a member of 'std'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\numeric(23): message : see declaration of 'std'
+C:\vcpkg\installed\x64-windows\include\matplot\util\common.h(452,9): warning C4984: 'if constexpr' is a C++17 language extension
+C:\vcpkg\installed\x64-windows\include\matplot\util\common.h(454,16): warning C4984: 'if constexpr' is a C++17 language extension
+C:\vcpkg\installed\x64-windows\include\matplot\util\common.h(456,16): warning C4984: 'if constexpr' is a C++17 language extension
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(13,28): error C2429: language feature 'nested-namespace-definition' requires compiler flag '/std:c++17'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(47,48): error C2039: 'string_view': is not a member of 'std'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\chrono(51): message : see declaration of 'std'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(47,59): error C2061: syntax error: identifier 'string_view'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(84,28): error C2039: 'string_view': is not a member of 'std'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\chrono(51): message : see declaration of 'std'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(84,39): error C2065: 'string_view': undeclared identifier
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(84,46): error C2039: 'string_view': is not a member of 'std'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\chrono(51): message : see declaration of 'std'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(84,57): error C2065: 'string_view': undeclared identifier
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(84,18): error C2923: 'std::pair': 'string_view' is not a valid template type argument for parameter '_Ty1'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(84): message : see declaration of 'string_view'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(84,18): error C2923: 'std::pair': 'string_view' is not a valid template type argument for parameter '_Ty2'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(84): message : see declaration of 'string_view'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(84,18): error C3203: 'pair': unspecialized class template can't be used as a template argument for template parameter '_Ty', expected a real type
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(86,46): error C2039: 'string_view': is not a member of 'std'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\chrono(51): message : see declaration of 'std'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(86,1): error C2065: 'string_view': undeclared identifier
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(86,64): error C2039: 'string_view': is not a member of 'std'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\chrono(51): message : see declaration of 'std'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(86,36): error C2923: 'std::pair': 'string_view' is not a valid template type argument for parameter '_Ty1'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(86): message : see declaration of 'string_view'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(86,36): error C2923: 'std::pair': 'string_view' is not a valid template type argument for parameter '_Ty2'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(86): message : see declaration of 'string_view'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(86,36): error C3203: 'pair': unspecialized class template can't be used as a template argument for template parameter '_Ty', expected a real type
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(88,22): error C2955: 'std::pair': use of class template requires template argument list
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\utility(123): message : see declaration of 'std::pair'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(88,52): error C2955: 'std::pair': use of class template requires template argument list
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\utility(123): message : see declaration of 'std::pair'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(89,22): error C2955: 'std::pair': use of class template requires template argument list
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\utility(123): message : see declaration of 'std::pair'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(89,49): error C2955: 'std::pair': use of class template requires template argument list
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\utility(123): message : see declaration of 'std::pair'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(90,22): error C2955: 'std::pair': use of class template requires template argument list
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\utility(123): message : see declaration of 'std::pair'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(90,48): error C2955: 'std::pair': use of class template requires template argument list
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\utility(123): message : see declaration of 'std::pair'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(92,22): error C2955: 'std::pair': use of class template requires template argument list
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\utility(123): message : see declaration of 'std::pair'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(92,55): error C2955: 'std::pair': use of class template requires template argument list
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\utility(123): message : see declaration of 'std::pair'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(93,22): error C2955: 'std::pair': use of class template requires template argument list
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\utility(123): message : see declaration of 'std::pair'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(93,53): error C2955: 'std::pair': use of class template requires template argument list
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\utility(123): message : see declaration of 'std::pair'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(94,22): error C2955: 'std::pair': use of class template requires template argument list
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\utility(123): message : see declaration of 'std::pair'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(94,50): error C2955: 'std::pair': use of class template requires template argument list
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\utility(123): message : see declaration of 'std::pair'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(95,22): error C2955: 'std::pair': use of class template requires template argument list
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\utility(123): message : see declaration of 'std::pair'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(95,49): error C2955: 'std::pair': use of class template requires template argument list
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\utility(123): message : see declaration of 'std::pair'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(96,22): error C2955: 'std::pair': use of class template requires template argument list
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\utility(123): message : see declaration of 'std::pair'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(96,46): error C2955: 'std::pair': use of class template requires template argument list
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\utility(123): message : see declaration of 'std::pair'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(97,22): error C2955: 'std::pair': use of class template requires template argument list
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\utility(123): message : see declaration of 'std::pair'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(97,50): error C2955: 'std::pair': use of class template requires template argument list
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\utility(123): message : see declaration of 'std::pair'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(98,22): error C2955: 'std::pair': use of class template requires template argument list
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\utility(123): message : see declaration of 'std::pair'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(98,53): error C2955: 'std::pair': use of class template requires template argument list
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\utility(123): message : see declaration of 'std::pair'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(99,22): error C2955: 'std::pair': use of class template requires template argument list
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\utility(123): message : see declaration of 'std::pair'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(99,48): error C2955: 'std::pair': use of class template requires template argument list
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\utility(123): message : see declaration of 'std::pair'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(100,22): error C2955: 'std::pair': use of class template requires template argument list
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\utility(123): message : see declaration of 'std::pair'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(100,52): error C2955: 'std::pair': use of class template requires template argument list
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\utility(123): message : see declaration of 'std::pair'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(101,22): error C2955: 'std::pair': use of class template requires template argument list
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\utility(123): message : see declaration of 'std::pair'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(104,22): error C2955: 'std::pair': use of class template requires template argument list
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\utility(123): message : see declaration of 'std::pair'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(105,22): error C2955: 'std::pair': use of class template requires template argument list
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\utility(123): message : see declaration of 'std::pair'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(107,22): error C2955: 'std::pair': use of class template requires template argument list
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\utility(123): message : see declaration of 'std::pair'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(107,54): error C2955: 'std::pair': use of class template requires template argument list
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\utility(123): message : see declaration of 'std::pair'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(108,22): error C2955: 'std::pair': use of class template requires template argument list
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\utility(123): message : see declaration of 'std::pair'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(109,22): error C2955: 'std::pair': use of class template requires template argument list
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\utility(123): message : see declaration of 'std::pair'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(111,22): error C2955: 'std::pair': use of class template requires template argument list
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\utility(123): message : see declaration of 'std::pair'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\gnuplot.h(113,22): error C2955: 'std::pair': use of class template requires template argument list
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\utility(123): message : see declaration of 'std::pair'
+C:\vcpkg\installed\x64-windows\include\matplot\backend\backend_registry.h(15,9): warning C4984: 'if constexpr' is a C++17 language extension
+  The contents of <optional> are available only with C++17 or later.
+C:\vcpkg\installed\x64-windows\include\matplot\util\colors.h(27,41): error C2039: 'string_view': is not a member of 'std'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\chrono(51): message : see declaration of 'std'
+C:\vcpkg\installed\x64-windows\include\matplot\util\colors.h(27,53): error C2065: 'string_view': undeclared identifier
+C:\vcpkg\installed\x64-windows\include\matplot\util\colors.h(27,53): error C2146: syntax error: missing ')' before identifier 's'
+C:\vcpkg\installed\x64-windows\include\matplot\util\colors.h(56,40): error C2039: 'string_view': is not a member of 'std'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\chrono(51): message : see declaration of 'std'
+C:\vcpkg\installed\x64-windows\include\matplot\util\colors.h(56,26): error C2365: 'matplot::to_array': redefinition; previous definition was 'function'
+C:\vcpkg\installed\x64-windows\include\matplot\util\colors.h(56,52): error C2065: 'string_view': undeclared identifier
+C:\vcpkg\installed\x64-windows\include\matplot\util\colors.h(56,52): error C2146: syntax error: missing ')' before identifier 'str_color'
+C:\vcpkg\installed\x64-windows\include\matplot\core\axis_type.h(48,37): error C2039: 'string_view': is not a member of 'std'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\chrono(51): message : see declaration of 'std'
+C:\vcpkg\installed\x64-windows\include\matplot\core\axis_type.h(48,49): error C2061: syntax error: identifier 'string_view'
+C:\vcpkg\installed\x64-windows\include\matplot\core\axis_type.h(52,37): error C2039: 'string_view': is not a member of 'std'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\chrono(51): message : see declaration of 'std'
+C:\vcpkg\installed\x64-windows\include\matplot\core\axis_type.h(52,49): error C2061: syntax error: identifier 'string_view'
+C:\vcpkg\installed\x64-windows\include\matplot\core\axis_type.h(55,49): error C2039: 'string_view': is not a member of 'std'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\chrono(51): message : see declaration of 'std'
+C:\vcpkg\installed\x64-windows\include\matplot\core\axis_type.h(55,61): error C2061: syntax error: identifier 'string_view'
+C:\vcpkg\installed\x64-windows\include\matplot\core\axis_type.h(97,44): error C2039: 'string_view': is not a member of 'std'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\chrono(51): message : see declaration of 'std'
+C:\vcpkg\installed\x64-windows\include\matplot\core\axis_type.h(97,56): error C2061: syntax error: identifier 'string_view'
+C:\vcpkg\installed\x64-windows\include\matplot\core\line_spec.h(56,33): error C2039: 'string_view': is not a member of 'std'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\chrono(51): message : see declaration of 'std'
+C:\vcpkg\installed\x64-windows\include\matplot\core\line_spec.h(56,27): error C2061: syntax error: identifier 'string_view'
+C:\vcpkg\installed\x64-windows\include\matplot\core\line_spec.h(56,27): error C2535: 'matplot::line_spec::line_spec(void)': member function already defined or declared
+C:\vcpkg\installed\x64-windows\include\matplot\core\line_spec.h(55): message : see declaration of 'matplot::line_spec::line_spec'
+C:\vcpkg\installed\x64-windows\include\matplot\core\line_spec.h(59,43): error C2039: 'string_view': is not a member of 'std'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\chrono(51): message : see declaration of 'std'
+C:\vcpkg\installed\x64-windows\include\matplot\util\concepts.h(51,70): warning C4346: 'std::is_pointer<std::remove_reference<_Ty>::type>::value': dependent name is not a type
+C:\vcpkg\installed\x64-windows\include\matplot\util\concepts.h(51,70): message : prefix with 'typename' to indicate a type
+C:\vcpkg\installed\x64-windows\include\matplot\core\line_spec.h(59,9): error C2061: syntax error: identifier 'string_view'
+C:\vcpkg\installed\x64-windows\include\matplot\core\line_spec.h(73,32): error C2039: 'string_view': is not a member of 'std'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\chrono(51): message : see declaration of 'std'
+C:\vcpkg\installed\x64-windows\include\matplot\core\line_spec.h(73,44): error C2061: syntax error: identifier 'string_view'
+C:\vcpkg\installed\x64-windows\include\matplot\core\line_spec.h(73,44): fatal error C1003: error count exceeds 100; stopping compilation
