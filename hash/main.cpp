@@ -80,6 +80,7 @@ public:
     vector<item*> searchYear(string year);
     vector<item*> searchMonth(string month);
     vector<item*> searchDay(string day);
+    void displaySearch(vector<int*> pointers);
 };
 
 void HashTable::add(item data){
@@ -204,14 +205,27 @@ void HashTable::display(string filename) {
 }
 
 vector<item*> HashTable::searchYear(string year) {
+    //string date = year + "-01-01 00:00:00+00:00";
     vector<item*> itemVector;
-    itemVector.clear();
+    //itemVector.clear();
     int index = 0;
     /* when searching for a full tuple, we use the end date. the tuples are hashed by full date and time.
      * searching for a year only means we only want one part of the hash input. theyre sorted by full date
      * and time so the hash function will not put us back in the exact same spot as the tuple landed. this means
      * we have to start searching from the beginning instead of closer to where the tuple is guaranteed to be.
      */
+    for(int i =0; i < this->tableSize; i++){
+        index = i;
+        item* Ptr = hashtable[index];
+        while(Ptr != nullptr){
+            if(Ptr->year == year){
+                itemVector.push_back(Ptr);
+            }
+            Ptr = Ptr->next;
+        }
+    }
+    return itemVector;
+    /*
     item* Ptr = hashtable[index];
     while(Ptr != nullptr){
         if(Ptr->year == year){
@@ -219,7 +233,7 @@ vector<item*> HashTable::searchYear(string year) {
         }
         Ptr = Ptr->next;
     }
-    return itemVector;
+     */
 }
 vector<item*> HashTable::searchMonth(string month) {
     vector<item*> itemVector;
@@ -246,6 +260,12 @@ vector<item*> HashTable::searchDay(string day) {
         Ptr = Ptr->next;
     }
     return itemVector;
+}
+
+void HashTable::displaySearch(vector<int *> pointers) {
+    for(auto i : pointers){
+
+    }
 }
 
 vector<item> runfile(string path){
@@ -308,14 +328,21 @@ int main(){
 
 
     HashTable Switzerland(9);
-    vector<item> itemVector = runfile("../ch.csv");
+    vector<item> itemVector = runfile("../fr.csv");
     int y = 0;
     for(auto i : itemVector){
         y++;
         Switzerland.add(i);
     }
-    Switzerland.display("Switzerland");
+    /*
+    vector<item*> pointers = Switzerland.searchYear("2020"); // put all years 2020 in item* vector
+    for(auto i: pointers){
+        cout << i->wattage << "hello" << endl;
+    }
+     */
 
+    //Switzerland.display("Switzerland");
+/*
     HashTable Denmark(9);
     itemVector = runfile("../dk.csv");
     for(auto i : itemVector){
@@ -372,6 +399,6 @@ int main(){
     }
     Sweden.display("Sweden");
 
-
+*/
     return 0;
 }
