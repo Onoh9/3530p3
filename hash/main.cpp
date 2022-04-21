@@ -80,7 +80,9 @@ public:
     vector<item*> searchYear(string year);
     vector<item*> searchMonth(string month);
     vector<item*> searchDay(string day);
-    void displaySearch();
+    void displaySearchYear(string year);
+    void displaySearchMonth(string month);
+    void displaySearchDay(string day);
 };
 
 void HashTable::add(item data){
@@ -205,9 +207,7 @@ void HashTable::display(string filename) {
 }
 
 vector<item*> HashTable::searchYear(string year) {
-    //string date = year + "-01-01 00:00:00+00:00";
     vector<item*> itemVector;
-    //itemVector.clear();
     int index = 0;
     /* when searching for a full tuple, we use the end date. the tuples are hashed by full date and time.
      * searching for a year only means we only want one part of the hash input. theyre sorted by full date
@@ -225,45 +225,54 @@ vector<item*> HashTable::searchYear(string year) {
         }
     }
     return itemVector;
-    /*
-    item* Ptr = hashtable[index];
-    while(Ptr != nullptr){
-        if(Ptr->year == year){
-            itemVector.push_back(Ptr);
-        }
-        Ptr = Ptr->next;
-    }
-     */
 }
 vector<item*> HashTable::searchMonth(string month) {
     vector<item*> itemVector;
-    itemVector.clear();
     int index = 0;
-    item* Ptr = hashtable[index];
-    while(Ptr != nullptr){
-        if(Ptr->month == month){
-            itemVector.push_back(Ptr);
+    for(int i =0; i < this->tableSize; i++){
+        index = i;
+        item* Ptr = hashtable[index];
+        while(Ptr != nullptr){
+            if(Ptr->month == month){
+                itemVector.push_back(Ptr);
+            }
+            Ptr = Ptr->next;
         }
-        Ptr = Ptr->next;
     }
     return itemVector;
 }
 vector<item*> HashTable::searchDay(string day) {
     vector<item*> itemVector;
-    itemVector.clear();
     int index = 0;
-    item* Ptr = hashtable[index];
-    while(Ptr != nullptr){
-        if(Ptr->day == day){
-            itemVector.push_back(Ptr);
+    for(int i =0; i < this->tableSize; i++){
+        index = i;
+        item* Ptr = hashtable[index];
+        while(Ptr != nullptr){
+            if(Ptr->day == day){
+                itemVector.push_back(Ptr);
+            }
+            Ptr = Ptr->next;
         }
-        Ptr = Ptr->next;
     }
     return itemVector;
 }
 
-void HashTable::displaySearch() {
-    vector<item *> temp = searchYear("2020");
+void HashTable::displaySearchYear(string year) {
+    vector<item *> temp = searchYear(year);
+    for(auto i: temp){
+        cout <<i->wattage << endl;
+    }
+}
+
+void HashTable::displaySearchMonth(string month) {
+    vector<item *> temp = searchYear(month);
+    for(auto i: temp){
+        cout <<i->wattage << endl;
+    }
+}
+
+void HashTable::displaySearchDay(string day) {
+    vector<item *> temp = searchYear(day);
     for(auto i: temp){
         cout <<i->wattage << endl;
     }
@@ -326,14 +335,14 @@ int main(){
     //cout << day << "\n";
 
     HashTable Switzerland(9);
-    vector<item> itemVector = runfile("../ch.csv");
+    vector<item> itemVector = runfile("../.csv");
     int y = 0;
     for(auto i : itemVector){
         y++;
         Switzerland.add(i);
     }
 
-    Switzerland.displaySearch();
+    Switzerland.displaySearchYear("2020");
     /*
     vector<item*> pointers = Switzerland.searchYear("2020"); // put all years 2020 in item* vector
     for(auto i: pointers){
