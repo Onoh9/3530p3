@@ -265,7 +265,7 @@ void HashTable::displaySearchYear(string year) {
 }
 
 void HashTable::displaySearchMonth(string month) {
-    vector<item *> temp = searchYear(month);
+    vector<item *> temp = searchMonth(month);
     for(auto i: temp){
         cout <<i->wattage << endl;
     }
@@ -335,14 +335,14 @@ int main(){
     //cout << day << "\n";
 
     HashTable Switzerland(9);
-    vector<item> itemVector = runfile("../.csv");
+    vector<item> itemVector = runfile("../ch.csv");
     int y = 0;
     for(auto i : itemVector){
         y++;
         Switzerland.add(i);
     }
 
-    Switzerland.displaySearchYear("2020");
+    Switzerland.displaySearchMonth("02");
     /*
     vector<item*> pointers = Switzerland.searchYear("2020"); // put all years 2020 in item* vector
     for(auto i: pointers){
