@@ -11,6 +11,110 @@
 #include <fstream>
 using namespace std;
 
+/* In the map the int is hours after midnight */
+class Node {
+public:
+    string name;
+    map<int, vector<pair<int, double>>> mp;
+    Node* right;
+    Node* left;
+    Node() { name = ""; right = nullptr, left = nullptr; }
+};
+
+int findHeight(Node* root) {
+    if (root == nullptr) {
+        return 0;
+    }
+    else {
+        return 1 + max(findHeight(root->left), findHeight(root->right));
+    }
+}
+
+Node* rightRoto(Node* root) {
+    Node* newR = root->left;
+    Node* temp = root->left->right;
+    newR->right = root;
+    root->left = temp;
+    return newR;
+}
+
+Node* leftRoto(Node* root) {
+    Node* newR = root->right;
+    Node* temp = root->right->left;
+    newR->left = root;
+    root->right = temp;
+    return newR;
+}
+
+Node* insertNode(Node* root, string& key, map<int, vector<pair<int, double>>> vals) {
+    if (root == nullptr) {
+        Node* temp = new Node();
+        temp->name = key;
+        temp->mp = vals;
+        return temp;
+    }
+    else if (root->name > key) {
+        root->left = insertNode(root->left, key, vals);
+    }
+    else if (root->name < key) {
+        root->right = insertNode(root->right, key, vals);
+    }
+    int balance = findHeight(root->right) - findHeight(root->left);
+    //LL if left side bigger and newly inserted is left child of left root
+    if (balance < -1 && key < root->left->name) {
+        return rightRoto(root);
+    }
+    //LR if left side bigger and newly inserted is right child of left root
+    else if (balance < -1 && key > root->left->name) {
+        root->left = leftRoto(root->left);
+        return rightRoto(root);
+    }
+    //RR if right side bigger and newly inserted is right child of right root
+    else if (balance > 1 && key > root->right->name) {
+        return leftRoto(root);
+    }
+    //RL if right side bigger and newly inserted is left child of right root
+    else if (balance > 1 && key < root->right->name) {
+        root->right = rightRoto(root->right);
+        return leftRoto(root);
+    }
+    return root;
+};
+
+Node* findNode(Node* root, string& toFind) {
+    if (root->name == toFind) {
+        return root;
+    }
+    else {
+        if (toFind > root->name) {
+            return findNode(root->right, toFind);
+        }
+        if (toFind < root->name) {
+            return findNode(root->left, toFind);
+        }
+    }
+}
+
+void print(Node* root) {
+    if (root == nullptr) {
+        return;
+    }
+    queue<Node*> q;
+    q.push(root);
+    while (!q.empty()) {
+        Node* toP = q.front();
+        cout << toP->name << " ";
+        q.pop();
+        if (toP->left != nullptr) {
+            q.push(toP->left);
+        }
+        if (toP->right != nullptr) {
+            q.push(toP->right);
+        }
+    }
+}
+
+
 struct item {
     string endDate;
     double wattage;
@@ -326,8 +430,11 @@ vector<item> runfile(string path) {
 int main() {
     std::string country, timeframe, day, month, year, ds, cont;
     bool run = true;
+
+    //While loop will allow the user to make multiple plots.
     while (run)
     {
+        // User Selection Menu
         std::cout << "In order to choose multiple countries type the country name followed by a space." << std::endl;
         std::cout << "Name of country: ";
         std::cin >> country;
@@ -359,6 +466,7 @@ int main() {
         {
             if (ds == "hashmap")
             {
+                // Create hash map
                 HashTable hash(9);
                 vector<item> itemVector = runfile(country + ".csv");
                 
@@ -370,7 +478,6 @@ int main() {
                 std::vector<double> y;
 
                 //hash.displaySearch();
-
                 for (int i = 1; i < 13; i++) 
                 {
                     double sum = 0;
